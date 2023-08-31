@@ -1,0 +1,35 @@
+{
+  "name": "@penobit/ui",
+  "version": "1.0.0",
+  "description": "Penobit UI is a simple, clean, fast and typescript based React UI library.",
+  "main": "index.js",
+  "repository": "https://github.com/penobit/penobit-ui",
+  "author": "Penobit<info@penobit.com>",
+  "license": "MIT",
+  "private": false,
+  "peerDependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@types/react": "^17.0.0 || ^18.0.0",
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@emotion/react": {
+      "optional": true
+    },
+    "@emotion/styled": {
+      "optional": true
+    }
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
