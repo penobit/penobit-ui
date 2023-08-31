@@ -2,7 +2,7 @@
   "name": "@penobit/ui",
   "version": "1.0.0",
   "description": "Penobit UI is a simple, clean, fast and typescript based React UI library.",
-  "main": "index.js",
+  "main": "src/index.ts",
   "repository": "https://github.com/penobit/penobit-ui",
   "author": "Penobit<info@penobit.com>",
   "license": "MIT",
