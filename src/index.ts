@@ -19,4 +19,6 @@
 
 export { default as Navbar } from './Navbar';
 export { default as Button } from './Button';
-export { default as Theme, PenobitThemeContext as ThemeContext } from './Theme';
+export { default as ThemeProvider, createTheme } from './Theme';
+
+export type { Theme } from '../types/Theme'

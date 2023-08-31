@@ -1,0 +1,1 @@
+export type Spacing = (value: number) => string

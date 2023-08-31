@@ -2,6 +2,9 @@
   "name": "@penobit/ui",
   "version": "1.0.0",
   "description": "Penobit UI is a simple, clean, fast and typescript based React UI library.",
+  "scripts": {
+    "build": "babel src/index.ts package.json --out-dir ../dist --copy-files"
+  },
   "main": "src/index.ts",
   "repository": "https://github.com/penobit/penobit-ui",
   "author": "Penobit<info@penobit.com>",
@@ -10,7 +13,9 @@
   "peerDependencies": {
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
-    "@types/react": "^17.0.0 || ^18.0.0",
+    "@emotion/cache": "^11.11.0",
+    "stylis": "^4.3",
+    "stylis-plugin-rtl": "^2.1.1",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
   },
@@ -23,6 +28,18 @@
     },
     "@emotion/styled": {
       "optional": true
+    },
+    "@emotion/cache": {
+      "optional": true
+    },
+    "@emotion/babel-plugin": {
+      "optional": true
+    },
+    "stylis": {
+      "optional": true
+    },
+    "stylis-rtl-plugin": {
+      "optional": true
     }
   },
   "sideEffects": false,
@@ -31,5 +48,30 @@
   },
   "engines": {
     "node": ">=12.0.0"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@emotion/cache": "^11.11.0",
+    "stylis": "^4.3",
+    "stylis-plugin-rtl": "^2.1.1",
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.10",
+    "@babel/core": "^7.22.11",
+    "@babel/preset-env": "^7.22.14",
+    "@babel/preset-react": "^7.22.5",
+    "@emotion/babel-plugin": "^11.11.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.2.0",
+    "@types/react": "^17.0.0 || ^18.0.0",
+    "@types/react-dom": "^18.2.7",
+    "@types/stylis": "^4.2",
+    "eslint": "^8.48.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "prettier": "^3.0.3"
   }
 }

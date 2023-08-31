@@ -1,14 +1,21 @@
-import styled from "@emotion/styled"
-import { NavbarProps, NavbarTitleProps } from "../@types/Navbar"
+import styled from '@emotion/styled'
 
-const StyledNavbar = styled.nav(({ fixed = true }: NavbarProps) => ({
+// import { NavbarProps, NavbarTitleProps } from "../../types/Navbar"
+const NAVBAR_HEIGHT_MOBILE = 50
+const NAVBAR_HEIGHT_DESKTOP = 60
+
+const StyledNavbar = styled.nav<NavbarProps>(({ theme, fixed = true }) => ({
   display: 'flex',
   alignItems: 'center',
-  height: 'calc(50px + (env(safe-area-inset-top))*0.8)!important',
+  height: `calc(${NAVBAR_HEIGHT_MOBILE}px + (env(safe-area-inset-top))*0.8)`,
   backdropFilter: 'saturate(180%) blur(20px)',
-  backgroundColor: 'rgba(255, 255, 255, 0.7)',
+  backgroundColor: 'rgba(255, 255, 255, 0.7)' /*  : 'rgba(0, 0, 0, 0.7)' */,
   zIndex: 99,
+  // marginBottom: 'env(safe-area-inset-bottom)',
   borderBottom: 'solid 1px rgba(0,0,0,.08)',
+  '@media (min-width: 767px)': {
+    height: `calc(${NAVBAR_HEIGHT_DESKTOP}px + (env(safe-area-inset-top))*0.8)!important`,
+  },
   ...(fixed && {
     position: 'fixed',
     inset: 0,
@@ -16,7 +23,7 @@ const StyledNavbar = styled.nav(({ fixed = true }: NavbarProps) => ({
   }),
 }))
 
-const StyledTitle = styled.h1(({ center = false }: NavbarTitleProps) => ({
+const StyledTitle = styled.h1<NavbarTitleProps>(({ center = false }) => ({
   textAlign: 'center',
   display: 'flex',
   alignItems: 'center',
@@ -31,15 +38,15 @@ const LeadingWrapper = styled.div({
   alignItems: 'center',
   justifyContent: 'center',
   width: '60px',
-  height: 'calc(50px + (env(safe-area-inset-top))*0.8)!important',
+  height: `calc(${NAVBAR_HEIGHT_MOBILE}px + (env(safe-area-inset-top))*0.8)!important`,
 })
 
-const ActionsWrapper = styled.div({
+const ActionsWrapper = styled.div(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  gap: '10px',
+  gap: theme.spacing(2),
   padding: '0 15px',
-})
+}))
 
 export { StyledNavbar, StyledTitle, LeadingWrapper, ActionsWrapper }

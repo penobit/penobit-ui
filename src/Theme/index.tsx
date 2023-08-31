@@ -1,10 +1,28 @@
 import React from 'react'
-import ThemeContextValue from '../@types/Theme'
+import { prefixer } from 'stylis'
+import stylisRTLPlugin from 'stylis-plugin-rtl'
+import createCache from '@emotion/cache'
+import { CacheProvider, ThemeProvider as EmotionThemeProvider, ThemeProviderProps } from '@emotion/react'
 
-export const PenobitThemeContext = React.createContext<ThemeContextValue>({})
+const cacheRtl = createCache({
+  key: 'muirtl',
+  stylisPlugins: [prefixer, stylisRTLPlugin],
+})
 
-function PenobitThemeProvider({ children, theme }: { children: React.ReactNode; theme: ThemeContextValue }) {
-  return <PenobitThemeContext.Provider value={theme}>{children}</PenobitThemeContext.Provider>
+function RTL(props: { children: React.ReactNode }) {
+  return <CacheProvider value={cacheRtl}>{props.children}</CacheProvider>
 }
 
-export default PenobitThemeProvider
+function ThemeProvider({ children, theme }: ThemeProviderProps & { theme: Theme }) {
+  console.log('provider: ', theme.palette.mode)
+  const emotionProvider = <EmotionThemeProvider theme={theme}>{children}</EmotionThemeProvider>
+
+  if (theme.direction === 'rtl') {
+    return <RTL>{emotionProvider}</RTL>
+  }
+
+  return emotionProvider
+}
+
+export default ThemeProvider
+export { default as createTheme } from './createTheme'

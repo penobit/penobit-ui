@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "resolveJsonModule": true,
+    "typeRoots": ["src/types"],
+    "esModuleInterop": true,
+    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["dom", "esnext"],
+    "strict": true,
+    "sourceMap": true,
+    "target": "esnext"
+  },
+  "exclude": ["./src/node_modules"]
+}
