@@ -169,16 +169,13 @@ const breakpoints = {
         }
         return `@media (min-width:${start}px) and (max-width:${end}px)`;
     },
-    // keys: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'],
     only: function (key) {
         if (typeof key === 'number') {
             return breakpoints.between(key, key);
         }
         const keys = Object.keys(this.values);
-        // @ts-ignore
         const start = this.values[key];
         const endKey = keys[keys.indexOf(key) + 1] ?? 'xxxl';
-        // @ts-ignore
         const end = this.values[endKey];
         if (!start || !end)
             throw new Error(`Breakpoint ${key} not found`);
@@ -223,4 +220,3 @@ const defaultTheme = {
     transitions,
 };
 export default defaultTheme;
-//# sourceMappingURL=defaultTheme.js.map

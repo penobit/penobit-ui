@@ -12,4 +12,3 @@ function Navbar({ title = 'Minipen', leading, actions = [], fixed = true, center
 export default Object.assign(Navbar, {
     Title: StyledTitle,
 });
-//# sourceMappingURL=index.js.map

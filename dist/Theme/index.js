@@ -20,4 +20,3 @@ function ThemeProvider({ children, theme }) {
 }
 export default ThemeProvider;
 export { default as createTheme } from './createTheme';
-//# sourceMappingURL=index.js.map

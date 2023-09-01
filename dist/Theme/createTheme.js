@@ -7,7 +7,6 @@ export default function createTheme(options) {
             up: options.breakpoints?.up ?? defaultTheme.breakpoints.up,
             down: options.breakpoints?.down ?? defaultTheme.breakpoints.down,
             between: options.breakpoints?.between ?? defaultTheme.breakpoints.between,
-            // keys: options.breakpoints?.keys ?? defaultTheme.breakpoints.keys,
             only: options.breakpoints?.only ?? defaultTheme.breakpoints.only,
         },
         palette: { ...defaultTheme.palette, ...options.palette },
@@ -19,4 +18,3 @@ export default function createTheme(options) {
         transitions: { ...defaultTheme.transitions, ...options.transitions },
     };
 }
-//# sourceMappingURL=createTheme.js.map

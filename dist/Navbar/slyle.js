@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-// import { NavbarProps, NavbarTitleProps } from "../../types/Navbar"
 const NAVBAR_HEIGHT_MOBILE = 50;
 const NAVBAR_HEIGHT_DESKTOP = 60;
 const StyledNavbar = styled.nav(({ theme, fixed = true }) => ({
@@ -7,9 +6,8 @@ const StyledNavbar = styled.nav(({ theme, fixed = true }) => ({
     alignItems: 'center',
     height: `calc(${NAVBAR_HEIGHT_MOBILE}px + (env(safe-area-inset-top))*0.8)`,
     backdropFilter: 'saturate(180%) blur(20px)',
-    backgroundColor: 'rgba(255, 255, 255, 0.7)' /*  : 'rgba(0, 0, 0, 0.7)' */,
+    backgroundColor: 'rgba(255, 255, 255, 0.7)',
     zIndex: 99,
-    // marginBottom: 'env(safe-area-inset-bottom)',
     borderBottom: 'solid 1px rgba(0,0,0,.08)',
     '@media (min-width: 767px)': {
         height: `calc(${NAVBAR_HEIGHT_DESKTOP}px + (env(safe-area-inset-top))*0.8)!important`,
@@ -44,4 +42,3 @@ const ActionsWrapper = styled.div(({ theme }) => ({
     padding: '0 15px',
 }));
 export { StyledNavbar, StyledTitle, LeadingWrapper, ActionsWrapper };
-//# sourceMappingURL=slyle.js.map
