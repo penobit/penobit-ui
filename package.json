@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Penobit UI is a simple, clean, fast and typescript based React UI library.",
   "scripts": {
-    "build": "babel src/index.ts package.json --out-dir ../dist --copy-files"
+    "build": "tsc src/index.ts"
   },
   "main": "src/index.ts",
   "repository": "https://github.com/penobit/penobit-ui",
